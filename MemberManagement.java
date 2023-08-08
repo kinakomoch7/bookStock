@@ -1,8 +1,6 @@
-import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Scanner;
 
-class MemberManagement implements MemberManageInterface {
+class MemberManagement extends Member implements MemberManageInterface {
 
 	public MemberManagement(MemberList ml) {
 		boolean memberContinue = true;
@@ -167,28 +165,6 @@ class MemberManagement implements MemberManageInterface {
 		for (int i = 0; i < ml.member.size(); i++) {
 			boolean dl = Deadline.deadlineCheck(ml.member.get(i));
 		}
-	}
-
-	public Member createMember(String[] name, String[] address, ArrayList<Book> rentalBook, boolean penalty,
-			Calendar penaltyDate, int id) {
-		Member member = new Member();
-		member.name = name;
-		member.address = address;
-		if (rentalBook == null) {
-			member.rentalBook = new ArrayList<Book>();
-			member.rentalNumber = 0;
-		} else {
-			member.rentalBook = rentalBook;
-			member.rentalNumber = rentalBook.size();
-		}
-		member.exist = true;
-		member.penalty = penalty;
-		member.penaltyDate = penaltyDate;
-		member.rentalMax = 3;
-		member.rentalLimit = 14;
-		member.id = id;
-
-		return member;
 	}
 
 }

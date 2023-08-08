@@ -1,4 +1,4 @@
-interface BookInterface {
+interface BookManageInterface {
     void bookRegister(BookList bl);
 
     String bookName();

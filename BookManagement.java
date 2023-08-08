@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 // 書籍
-class BookManagement implements BookInterface {
+class BookManagement implements BookManageInterface {
 	public BookManagement(BookList bl) {
 		boolean bookContinue = true;
 		while (bookContinue) {

@@ -1,7 +1,15 @@
-import java.util.ArrayList;
-import java.util.Calendar;
+interface MemberManageInterface {
+    void memberRegister(MemberList ml);
 
-interface MemberInterface {
-    Member createMember(String[] name, String[] address, ArrayList<Book> rentalBook, boolean penalty,
-            Calendar penaltyDate, int id);
+    void memberEdit(MemberList ml);
+
+    String[] memberName();
+
+    String[] memberAddress();
+
+    static int idManagement(MemberList ml) {
+        return idManagement(ml);
+    };
+
+    void DelayCheck(MemberList ml);
 }
