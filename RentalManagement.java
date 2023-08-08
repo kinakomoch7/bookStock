@@ -29,15 +29,7 @@ public class RentalManagement {
 				if (b.num <= 0) {
 					printMessage("この書籍は借りることができません。");
 				} else {
-					b.num--;
-					Book copy = new Book(b.name, b.author, b.publisher, b.id);
-					copy.cal = Calendar.getInstance();
-
-					m.rentalBook.add(copy);
-					m.rentalNumber++;
-					b.rentalMember.add(m);
-					System.out.println("貸出処理が完了しました。");
-					printMessage("返却期限は" + m.rentalLimit / 7 + "週間です");
+					checkOut(b, m);
 				}
 			}
 		}
@@ -50,5 +42,17 @@ public class RentalManagement {
 
 	private int calcAvailableDay(Calendar now, Member m) {
 		return 7 - Deadline.diffDays(now.getTimeInMillis() - m.penaltyDate.getTimeInMillis());
+	}
+
+	private void checkOut(Book b, Member m) {
+		b.num--;
+		Book copy = new Book(b.name, b.author, b.publisher, b.id);
+		copy.cal = Calendar.getInstance();
+
+		m.rentalBook.add(copy);
+		m.rentalNumber++;
+		b.rentalMember.add(m);
+		System.out.println("貸出処理が完了しました。");
+		printMessage("返却期限は" + m.rentalLimit / 7 + "週間です");
 	}
 }
