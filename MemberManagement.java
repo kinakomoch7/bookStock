@@ -162,8 +162,13 @@ public class MemberManagement implements MemberManageInterface {
 
 	// 延滞確認
 	public static void DelayCheck(MemberList ml) {
+		boolean dl = false;
 		for (int i = 0; i < ml.member.size(); i++) {
-			boolean dl = Deadline.deadlineCheck(ml.member.get(i));
+			dl = Deadline.deadlineCheck(ml.member.get(i));
+		}
+		if (dl == false) {
+			System.out.println("延滞はありません");
+			System.out.println("");
 		}
 	}
 }
