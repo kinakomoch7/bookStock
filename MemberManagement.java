@@ -53,6 +53,7 @@ public class MemberManagement implements MemberManageInterface {
 		Member m = MemberInterface.createMember(name, address, null, false, null, ml.member.size());
 		ml.member.add(m);
 		System.out.println("会員登録が完了しました。");
+		System.out.println("ID:" + (ml.member.size() - 1));
 		System.out.println("");
 	}
 
@@ -128,7 +129,7 @@ public class MemberManagement implements MemberManageInterface {
 		return address;
 	}
 
-	// id管理
+	// メンバー確認
 	public static int idManagement(MemberList ml) {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("会員IDを入力してください。");
