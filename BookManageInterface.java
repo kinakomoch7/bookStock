@@ -13,5 +13,4 @@ interface BookManageInterface {
 
     void searchResult(Book b);
 
-    int idManagement(BookList bl);
 }

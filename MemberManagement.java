@@ -1,7 +1,6 @@
 import java.util.Scanner;
 
-class MemberManagement extends Member implements MemberManageInterface {
-
+public class MemberManagement implements MemberManageInterface {
 	public MemberManagement(MemberList ml) {
 		boolean memberContinue = true;
 
@@ -39,7 +38,6 @@ class MemberManagement extends Member implements MemberManageInterface {
 
 	// メンバー追加
 	public void memberRegister(MemberList ml) {
-
 		Scanner scanner = new Scanner(System.in);
 		int check = 2;
 		String[] name = new String[2];
@@ -52,7 +50,7 @@ class MemberManagement extends Member implements MemberManageInterface {
 			System.out.println("住所:" + address[0] + address[1] + address[2]);
 			check = scanner.nextInt();
 		}
-		Member m = createMember(name, address, null, false, null, ml.member.size());
+		Member m = MemberInterface.createMember(name, address, null, false, null, ml.member.size());
 		ml.member.add(m);
 		System.out.println("会員登録が完了しました。");
 		System.out.println("");
@@ -95,7 +93,8 @@ class MemberManagement extends Member implements MemberManageInterface {
 						System.out.println("住所:" + address[0] + address[1] + address[2]);
 						addressflag = scanner.nextInt();
 					}
-					m = createMember(m.name, address, m.rentalBook, m.penalty, m.getPenaltyDate(), m.id);
+					m = MemberInterface.createMember(m.name, address, m.rentalBook, m.penalty, m.getPenaltyDate(),
+							m.id);
 					ml.member.set(id, m);
 					System.out.println("住所の変更が完了しました。");
 					System.out.println("");
@@ -161,10 +160,9 @@ class MemberManagement extends Member implements MemberManageInterface {
 	}
 
 	// 延滞確認
-	public void DelayCheck(MemberList ml) {
+	public static void DelayCheck(MemberList ml) {
 		for (int i = 0; i < ml.member.size(); i++) {
 			boolean dl = Deadline.deadlineCheck(ml.member.get(i));
 		}
 	}
-
 }

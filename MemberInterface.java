@@ -1,15 +1,10 @@
-interface MemberManageInterface {
-    void memberRegister(MemberList ml);
+import java.util.ArrayList;
+import java.util.Calendar;
 
-    void memberEdit(MemberList ml);
+interface MemberInterface {
+    static Member createMember(String[] name, String[] address, ArrayList<Book> rentalBook, boolean penalty,
+            Calendar penaltyDate, int id) {
 
-    String[] memberName();
-
-    String[] memberAddress();
-
-    static int idManagement(MemberList ml) {
-        return idManagement(ml);
-    };
-
-    void DelayCheck(MemberList ml);
+        return new Normal(name, address, rentalBook, penalty, penaltyDate, id);
+    }
 }

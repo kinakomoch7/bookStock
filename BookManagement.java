@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 // 書籍
-class BookManagement implements BookManageInterface {
+public class BookManagement implements BookManageInterface {
 	public BookManagement(BookList bl) {
 		boolean bookContinue = true;
 		while (bookContinue) {
@@ -173,7 +173,7 @@ class BookManagement implements BookManageInterface {
 	}
 
 	// id管理
-	public int idManagement(BookList bl) {
+	public static int idManagement(BookList bl) {
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("書籍のIDを入力してください。");
 		int id = scanner.nextInt();
