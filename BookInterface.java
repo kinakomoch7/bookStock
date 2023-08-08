@@ -3,9 +3,9 @@ import java.util.Calendar;
 
 interface BookInterface {
 
-    String name = "小出";
-    String author = "";
-    String publisher = "";
+    String name = "ハリーポッター";
+    String author = "D.K";
+    String publisher = "集英社";
     int num = 1;
     int numMax = 10;
     Calendar cal = Calendar.getInstance();

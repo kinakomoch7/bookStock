@@ -23,6 +23,7 @@ public class BookManagement implements BookManageInterface {
 						System.out.println(bl.book.get(i).name);
 					}
 				}
+				System.out.println("");
 			} else if (worknum == 3) {
 				System.out.println("検索");
 				bookSearch(bl);
